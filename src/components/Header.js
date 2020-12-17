@@ -50,7 +50,6 @@ const Navigation = styled.ul`
         height: 30px;
         border: none;
         border-radius: 30px 0 0 0;
-        /* background: #ffff6d; */
         background: linear-gradient(
           315deg,
           #ffff6d,

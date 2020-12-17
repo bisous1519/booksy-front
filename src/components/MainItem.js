@@ -43,17 +43,19 @@ const ItemBox = styled.li`
   }
 `;
 
-export default function MainItem({ data: { img, title, author, vote } }) {
-  //   const { img, title, author, vote } = data; // 비구조화할당
+export default function MainItem({
+  data: { coverLargeUrl, title, author, customerReviewRank },
+}) {
+  //   const { img, title, author, customerReviewRank } = data; // 비구조화할당
   return (
     <ItemBox>
       <div>
-        <img src={img} alt="Book Cover" />
+        <img src={coverLargeUrl} alt="Book Cover" />
       </div>
       <h3>{title}</h3>
       <p>{author}</p>
       <i>
-        {vote > 9 && (
+        {customerReviewRank > 9 && (
           <>
             <TiStarFullOutline />
             <TiStarFullOutline />
@@ -62,7 +64,7 @@ export default function MainItem({ data: { img, title, author, vote } }) {
             <TiStarFullOutline />
           </>
         )}
-        {vote > 8 && vote <= 9 && (
+        {customerReviewRank > 8 && customerReviewRank <= 9 && (
           <>
             <TiStarFullOutline />
             <TiStarFullOutline />
@@ -71,7 +73,7 @@ export default function MainItem({ data: { img, title, author, vote } }) {
             <TiStarHalfOutline />
           </>
         )}
-        {vote > 7 && vote <= 8 && (
+        {customerReviewRank > 7 && customerReviewRank <= 8 && (
           <>
             <TiStarFullOutline />
             <TiStarFullOutline />
@@ -80,7 +82,7 @@ export default function MainItem({ data: { img, title, author, vote } }) {
             <TiStarOutline />
           </>
         )}
-        {vote > 6 && vote <= 7 && (
+        {customerReviewRank > 6 && customerReviewRank <= 7 && (
           <>
             <TiStarFullOutline />
             <TiStarFullOutline />
@@ -89,7 +91,7 @@ export default function MainItem({ data: { img, title, author, vote } }) {
             <TiStarOutline />
           </>
         )}
-        {vote > 5 && vote <= 6 && (
+        {customerReviewRank > 5 && customerReviewRank <= 6 && (
           <>
             <TiStarFullOutline />
             <TiStarFullOutline />
@@ -98,7 +100,7 @@ export default function MainItem({ data: { img, title, author, vote } }) {
             <TiStarOutline />
           </>
         )}
-        {vote > 4 && vote <= 5 && (
+        {customerReviewRank > 4 && customerReviewRank <= 5 && (
           <>
             <TiStarFullOutline />
             <TiStarFullOutline />
@@ -107,7 +109,7 @@ export default function MainItem({ data: { img, title, author, vote } }) {
             <TiStarOutline />
           </>
         )}
-        {vote > 3 && vote <= 4 && (
+        {customerReviewRank > 3 && customerReviewRank <= 4 && (
           <>
             <TiStarFullOutline />
             <TiStarHalfOutline />
@@ -116,7 +118,7 @@ export default function MainItem({ data: { img, title, author, vote } }) {
             <TiStarOutline />
           </>
         )}
-        {vote > 2 && vote <= 3 && (
+        {customerReviewRank > 2 && customerReviewRank <= 3 && (
           <>
             <TiStarFullOutline />
             <TiStarOutline />
@@ -125,7 +127,7 @@ export default function MainItem({ data: { img, title, author, vote } }) {
             <TiStarOutline />
           </>
         )}
-        {vote <= 2 && (
+        {customerReviewRank <= 2 && (
           <>
             <TiStarHalfOutline />
             <TiStarOutline />
