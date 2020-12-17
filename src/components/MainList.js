@@ -4,6 +4,7 @@ import axios from "axios";
 import { Inner } from "./Header";
 import MainItem from "./MainItem";
 import useAsync from "../hooks/useAsync";
+// import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 // import IMG1 from "../assets/img/book01.png";
 // import IMG2 from "../assets/img/book02.png";
@@ -11,17 +12,6 @@ import useAsync from "../hooks/useAsync";
 // import IMG4 from "../assets/img/book04.png";
 // import IMG5 from "../assets/img/book05.png";
 // import IMG6 from "../assets/img/book06.png";
-
-const ListContainer = styled(Inner)`
-  h2 {
-    margin: 40px 0 30px 0;
-    font-size: 22px;
-  }
-  ul {
-    display: flex;
-    justify-content: space-between;
-  }
-`;
 
 // const fakeData = [
 //   { id: 1, img: IMG1, title: "책제목", author: "책작가", vote: 8 },
@@ -31,6 +21,19 @@ const ListContainer = styled(Inner)`
 //   { id: 5, img: IMG5, title: "책제목", author: "책작가", vote: 4 },
 //   { id: 6, img: IMG6, title: "책제목", author: "책작가", vote: 10 },
 // ];
+
+const ListContainer = styled(Inner)`
+  h2 {
+    margin: 50px 0 40px 0;
+    font-size: 22px;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+`;
 
 const fetchBestSeller = async () => {
   return await axios.get(
@@ -58,6 +61,24 @@ export default function MainList() {
           <MainItem data={v} key={v.itemId} />
         ))}
       </ul>
+      {/* <ResponsiveMasonry
+        columnsCountBreakPoints={{ 350: 3, 750: 4, 850: 5, 999: 6 }}
+      >
+        <Masonry columnsCount="6">
+          {success.item.map((v) => (
+            <MainItem data={v} key={v.itemId} />
+          ))}
+        </Masonry>
+      </ResponsiveMasonry> */}
+
+      {/*  // styled-component 내용
+        ${Masonry} {
+            div {
+                align-items: center;
+                justify-content: center;
+            }
+        } 
+      */}
     </ListContainer>
   );
 }

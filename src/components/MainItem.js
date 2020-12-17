@@ -9,8 +9,14 @@ import {
 const ItemBox = styled.li`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
   gap: 10px;
   width: 140px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #dadada;
+
   div {
     transition: all 0.3s;
     width: 140px;
@@ -34,6 +40,7 @@ const ItemBox = styled.li`
   }
   p {
     font-size: 13px;
+    flex: 1;
   }
   i {
     padding: 0 3px;
