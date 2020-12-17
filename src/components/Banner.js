@@ -35,7 +35,7 @@ const BannerBox = styled.div`
     }
     button {
       margin-top: 20px;
-      width: 80px;
+      width: 70px;
       height: 30px;
       background: #c0a498;
       color: #fff;
@@ -43,6 +43,9 @@ const BannerBox = styled.div`
       border: none;
       outline: none;
       cursor: pointer;
+      &:hover {
+        background: #c9afa4;
+      }
     }
   }
   img {
