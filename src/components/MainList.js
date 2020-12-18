@@ -23,7 +23,7 @@ import ErrorPage from "./common/ErrorPage";
 //   { id: 6, img: IMG6, title: "책제목", author: "책작가", vote: 10 },
 // ];
 
-const ListContainer = styled(Inner)`
+export const ListContainer = styled(Inner)`
   h2 {
     margin: 50px 0 40px 0;
     font-size: 22px;

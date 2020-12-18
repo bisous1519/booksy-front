@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { AiOutlineSearch } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import IMG from "../assets/img/logo.png";
 
 const Navigation = styled.ul`
@@ -94,11 +95,13 @@ const HeaderContainer = styled.header`
         outline: none;
         padding: 0 10px;
       }
+      a {
+        position: absolute;
+        right: 30px;
+      }
       svg {
         width: 20px;
         height: 20px;
-        position: absolute;
-        right: 30px;
       }
     }
     ul {
@@ -114,6 +117,10 @@ const HeaderContainer = styled.header`
 `;
 
 function Header() {
+  const [text, setText] = useState("");
+  const onChangeText = (e) => {
+    setText(e.target.value);
+  };
   return (
     <HeaderContainer>
       <Inner>
@@ -121,8 +128,16 @@ function Header() {
           <img src={IMG} alt="LOGO" />
         </i>
         <div>
-          <input type="text" placeholder="Search by Author, Content" />
-          <AiOutlineSearch />
+          <input
+            type="text"
+            placeholder="Search by Author, Content"
+            value={text}
+            onChange={onChangeText}
+          />
+          {/* Link는 a 태그! */}
+          <Link to={`/search/${text}`}>
+            <AiOutlineSearch />
+          </Link>
         </div>
         <ul>
           <li>LOGIN</li>

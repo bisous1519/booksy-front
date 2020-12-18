@@ -46,6 +46,7 @@ export default function useAsync(callBack, deps = []) {
     fetchData();
     //eslint-disable-next-line
   }, deps);
+  //   deps 자리에 오는 어떤 배열변수가 값이 바뀔때마다 fetchData()가 다시 실행되도록 해줌.
 
   return [state]; // [state, fetch] : fetch()를 한번 더 실행(ex> 새로고침) 해줄수도 있는 경우 대비. 지금은 안해도됨?
 }
