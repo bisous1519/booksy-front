@@ -37,10 +37,14 @@ const ItemBox = styled.li`
   h3 {
     font-size: 14px;
     font-weight: bold;
+    line-height: 1.3;
+    letter-spacing: 0.4px;
   }
   p {
     font-size: 13px;
     flex: 1;
+    line-height: 1.3;
+    letter-spacing: 0.4px;
   }
   i {
     padding: 0 3px;

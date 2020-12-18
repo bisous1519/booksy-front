@@ -4,6 +4,7 @@ import axios from "axios";
 import { Inner } from "./Header";
 import MainItem from "./MainItem";
 import useAsync from "../hooks/useAsync";
+import ErrorPage from "./common/ErrorPage";
 // import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 // import IMG1 from "../assets/img/book01.png";
@@ -51,7 +52,7 @@ export default function MainList() {
   console.log(loading, success, error);
 
   if (loading) return <div>로딩중!</div>;
-  if (error) return <div>{error}</div>;
+  if (error) return <ErrorPage />;
   if (!success) return null;
   return (
     <ListContainer>
