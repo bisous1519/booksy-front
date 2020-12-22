@@ -5,6 +5,7 @@ import {
   TiStarHalfOutline,
   TiStarOutline,
 } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 const ItemBox = styled.li`
   display: flex;
@@ -55,99 +56,101 @@ const ItemBox = styled.li`
 `;
 
 export default function MainItem({
-  data: { coverLargeUrl, title, author, customerReviewRank },
+  data: { coverLargeUrl, title, author, customerReviewRank, isbn },
 }) {
   //   const { img, title, author, customerReviewRank } = data; // 비구조화할당
   return (
-    <ItemBox>
-      <div>
-        <img src={coverLargeUrl} alt="Book Cover" />
-      </div>
-      <h3>{title}</h3>
-      <p>{author}</p>
-      <i>
-        {customerReviewRank > 9 && (
-          <>
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-          </>
-        )}
-        {customerReviewRank > 8 && customerReviewRank <= 9 && (
-          <>
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarHalfOutline />
-          </>
-        )}
-        {customerReviewRank > 7 && customerReviewRank <= 8 && (
-          <>
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarHalfOutline />
-            <TiStarOutline />
-          </>
-        )}
-        {customerReviewRank > 6 && customerReviewRank <= 7 && (
-          <>
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarOutline />
-            <TiStarOutline />
-          </>
-        )}
-        {customerReviewRank > 5 && customerReviewRank <= 6 && (
-          <>
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarHalfOutline />
-            <TiStarOutline />
-            <TiStarOutline />
-          </>
-        )}
-        {customerReviewRank > 4 && customerReviewRank <= 5 && (
-          <>
-            <TiStarFullOutline />
-            <TiStarFullOutline />
-            <TiStarOutline />
-            <TiStarOutline />
-            <TiStarOutline />
-          </>
-        )}
-        {customerReviewRank > 3 && customerReviewRank <= 4 && (
-          <>
-            <TiStarFullOutline />
-            <TiStarHalfOutline />
-            <TiStarOutline />
-            <TiStarOutline />
-            <TiStarOutline />
-          </>
-        )}
-        {customerReviewRank > 2 && customerReviewRank <= 3 && (
-          <>
-            <TiStarFullOutline />
-            <TiStarOutline />
-            <TiStarOutline />
-            <TiStarOutline />
-            <TiStarOutline />
-          </>
-        )}
-        {customerReviewRank <= 2 && (
-          <>
-            <TiStarHalfOutline />
-            <TiStarOutline />
-            <TiStarOutline />
-            <TiStarOutline />
-            <TiStarOutline />
-          </>
-        )}
-      </i>
-    </ItemBox>
+    <Link to={`/detail/${isbn}`}>
+      <ItemBox>
+        <div>
+          <img src={coverLargeUrl} alt="Book Cover" />
+        </div>
+        <h3>{title}</h3>
+        <p>{author}</p>
+        <i>
+          {customerReviewRank > 9 && (
+            <>
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+            </>
+          )}
+          {customerReviewRank > 8 && customerReviewRank <= 9 && (
+            <>
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+              <TiStarHalfOutline />
+            </>
+          )}
+          {customerReviewRank > 7 && customerReviewRank <= 8 && (
+            <>
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+              <TiStarHalfOutline />
+              <TiStarOutline />
+            </>
+          )}
+          {customerReviewRank > 6 && customerReviewRank <= 7 && (
+            <>
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+              <TiStarOutline />
+              <TiStarOutline />
+            </>
+          )}
+          {customerReviewRank > 5 && customerReviewRank <= 6 && (
+            <>
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+              <TiStarHalfOutline />
+              <TiStarOutline />
+              <TiStarOutline />
+            </>
+          )}
+          {customerReviewRank > 4 && customerReviewRank <= 5 && (
+            <>
+              <TiStarFullOutline />
+              <TiStarFullOutline />
+              <TiStarOutline />
+              <TiStarOutline />
+              <TiStarOutline />
+            </>
+          )}
+          {customerReviewRank > 3 && customerReviewRank <= 4 && (
+            <>
+              <TiStarFullOutline />
+              <TiStarHalfOutline />
+              <TiStarOutline />
+              <TiStarOutline />
+              <TiStarOutline />
+            </>
+          )}
+          {customerReviewRank > 2 && customerReviewRank <= 3 && (
+            <>
+              <TiStarFullOutline />
+              <TiStarOutline />
+              <TiStarOutline />
+              <TiStarOutline />
+              <TiStarOutline />
+            </>
+          )}
+          {customerReviewRank <= 2 && (
+            <>
+              <TiStarHalfOutline />
+              <TiStarOutline />
+              <TiStarOutline />
+              <TiStarOutline />
+              <TiStarOutline />
+            </>
+          )}
+        </i>
+      </ItemBox>
+    </Link>
   );
 }

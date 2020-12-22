@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Main from "./pages/Main";
 import ErrorPage from "./components/common/ErrorPage";
 import Search from "./pages/Search";
+import Detail from "./pages/Detail";
 
 const Global = createGlobalStyle`
   html{
@@ -17,6 +18,7 @@ const Global = createGlobalStyle`
   }
   a{
     text-decoration: none;
+    color: #000;
   }
 `;
 function App() {
@@ -28,6 +30,7 @@ function App() {
       <Switch>
         <Route path="/" component={Main} exact />
         <Route path="/search/:text" component={Search} />
+        <Route path="/detail/:isbn" component={Detail} />
         <Route component={ErrorPage} />
         {/* <Main /> */}
       </Switch>
