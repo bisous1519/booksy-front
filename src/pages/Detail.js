@@ -5,6 +5,29 @@ import ErrorPage from "../components/common/ErrorPage";
 import useAsync from "../hooks/useAsync";
 import Header from "../components/Header";
 
+const DetailBar = styled.ul`
+  height: 40%;
+  border-left: 1px solid #b2b2b2;
+  position: fixed;
+  top: 35%;
+  right: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  li {
+    width: 25px;
+    height: 25px;
+    background: #e1a993;
+    color: #6c6c6c;
+    font-size: 13px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+  }
+`;
+
 const DetailTopContainer = styled.section`
   width: 100vw;
   height: 100vh;
@@ -117,6 +140,19 @@ const DetailTopContainer = styled.section`
   .cover {
     background: linear-gradient(45deg, #dad5dc 0%, #f2ebf4 100%);
   }
+
+  article {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    b {
+      margin-bottom: 24px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    span {
+    }
+  }
 `;
 const DetailBottomContainer = styled.section`
   width: 100vw;
@@ -180,8 +216,17 @@ export default function Detail({ match, history }) {
             </div>
           </div>
         </div>
+        <article>
+          <b>{data.item[0].title}</b>
+          <span>{data.item[0].author}</span>
+        </article>
       </DetailTopContainer>
       <DetailBottomContainer></DetailBottomContainer>
+      <DetailBar>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </DetailBar>
     </>
   );
 }
