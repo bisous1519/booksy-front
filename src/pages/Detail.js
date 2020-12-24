@@ -7,12 +7,12 @@ import Header from "../components/Header";
 
 const DetailTopContainer = styled.section`
   width: 100vw;
-  height: 200vh;
+  height: 100vh;
   background: #fff;
 
   h1 {
     text-align: center;
-    margin: 40px 0 0 0;
+    margin: 40px 0 0px 0;
     font-size: 23px;
   }
 
@@ -29,21 +29,13 @@ const DetailTopContainer = styled.section`
       border-radius: 2px 4px 4px 2px;
       background: linear-gradient(45deg, #dad5dc 0%, #f2ebf4 100%);
       font-family: acumin-pro, sans-serif;
-      -webkit-box-shadow: 13px 13px 8px 0px rgba(151, 146, 153, 0.6);
-      -moz-box-shadow: 13px 13px 8px 0px rgba(151, 146, 153, 0.6);
       box-shadow: 13px 13px 8px 0px rgba(151, 146, 153, 0.6);
       font-weight: 400;
       color: #2b2b2b;
-      -webkit-transform-style: preserve-3d;
-      -moz-transform-style: preserve-3d;
       transform-style: preserve-3d;
-      -webkit-transition: -webkit-transform 0.5s;
-      -moz-transition: -moz-transform 0.5s;
       transition: transform 0.5s;
 
       &:hover {
-        -webkit-transform: rotate3d(0, 1, 0, 35deg);
-        -moz-transform: rotate3d(0, 1, 0, 35deg);
         transform: rotate3d(0, 1, 0, 35deg);
       }
 
@@ -60,36 +52,25 @@ const DetailTopContainer = styled.section`
         width: 200px;
         height: 275px;
       }
+      .cover img {
+        width: 100%;
+        height: 100%;
+      }
 
-      -webkit-transform-style: preserve-3d;
-      -moz-transform-style: preserve-3d;
       transform-style: preserve-3d;
-      -webkit-transform-origin: 0% 50%;
-      -moz-transform-origin: 0% 50%;
       transform-origin: 0% 50%;
-      -webkit-transition: -webkit-transform 0.5s;
-      -moz-transition: -moz-transform 0.5s;
       transition: transform 0.5s;
-      -webkit-transform: translate3d(0, 0, 20px);
-      -moz-transform: translate3d(0, 0, 20px);
       transform: translate3d(0, 0, 20px);
       z-index: 10;
     }
 
     .left-side {
-      width: 30px;
+      width: 40px;
       left: -20px;
       height: 275px;
       background-color: rgba(232, 229, 234);
-      -webkit-transform: rotate3d(0, 1, 0, -90deg);
-      -moz-transform: rotate3d(0, 1, 0, -90deg);
       transform: rotate3d(0, 1, 0, -90deg);
     }
-  }
-
-  .cover img {
-    width: 100%;
-    height: 100%;
   }
 
   .container {
@@ -121,36 +102,20 @@ const DetailTopContainer = styled.section`
     }
 
     h2 {
-      width: 250px;
+      width: 275px;
       height: 30px;
       color: #2b2b2b;
-      font-size: 13px;
-      line-height: 30px;
+      font-size: 15px;
+      line-height: 40px;
       padding-right: 10px;
       text-align: right;
-      -webkit-transform-origin: 0 0;
-      -moz-transform-origin: 0 0;
       transform-origin: 0 0;
-      -webkit-transform: rotate(90deg) translateY(-40px);
-      -moz-transform: rotate(90deg) translateY(-40px);
       transform: rotate(90deg) translateY(-40px);
     }
   }
 
   .cover {
     background: linear-gradient(45deg, #dad5dc 0%, #f2ebf4 100%);
-  }
-
-  .left-side h2 span {
-    &:first-child {
-      font-weight: 400;
-      font-size: 13px;
-      padding-right: 20px;
-    }
-
-    &:last-child {
-      font-family: acumin-pro, sans-serif;
-    }
   }
 `;
 const DetailBottomContainer = styled.section`
@@ -211,10 +176,7 @@ export default function Detail({ match, history }) {
               </div>
             </div>
             <div className="left-side">
-              <h2>
-                <span>{data.item[0].author}</span>
-                <span>{data.item[0].title}</span>
-              </h2>
+              <h2>Booksy</h2>
             </div>
           </div>
         </div>
